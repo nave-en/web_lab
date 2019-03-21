@@ -1,0 +1,38 @@
+<html>
+<body>
+<a href="https://google.com" id="c"></a>
+<a></a>
+<button onclick="links"></button>
+<table id="tab">
+</table>
+	<script>
+		var x = new Array();
+		function rcheck(doc){
+			if(doc.href != undefined)
+				x.push(doc);
+			d = doc.children;
+			for(var i=0;i<d.length;i++)
+				rcheck(d[i]);
+		}
+		function links(){
+			rcheck(document);
+			var txt = "";
+			for(var i=0;i<x.length;i++)
+			{
+				txt += "<tr>";
+				txt += "<td>";
+				txt += x[i].id + " ";
+				txt += "</td>";
+				txt += "<td>";
+				txt += x[i].href;
+				txt += "</td>";
+				txt += "</tr>";
+			}
+			var tab = document.getElementById("tab");
+			tab.innerHTML += txt;
+		}
+		
+	</script>
+	
+</body>
+</html>

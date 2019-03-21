@@ -1,0 +1,40 @@
+<html>
+	<body style="background-color:#000000;">
+		<img onmouseover="b(0)" onmouseout="b2()" src="temp1.jfif" alt="img1">
+	<br>
+	<img onmouseover="b(1)" onmouseout="b2()" src="temp2.jfif" alt="img2">
+	<br>
+	<img onmouseover="b(2)" onmouseout="b2()" src="temp3.jfif" alt="img3">
+	<br>
+	<script>
+		window.onload = function(){
+			b2();
+		}
+		function b(id){
+				//console.log("cibi");
+			 var imgs =  document.getElementsByTagName("img");
+			for(var x=0;x<imgs.length;x++)
+			{
+				if(x != id)
+				imgs[x].style.opacity = "0.4";
+				else
+					{
+						imgs[x].style.height = "25%";
+						imgs[x].style.width = "25%";
+					}
+					
+			}
+		}
+		function b2(){
+				//console.log("cibi");
+			 var imgs =  document.getElementsByTagName("img");
+			for(var x=0;x<imgs.length;x++)
+			{
+				imgs[x].style.opacity = "1";
+				imgs[x].style.height = "10%";
+				imgs[x].style.width = "10%";
+			}
+		}
+	</script>
+	</body>
+</html>
